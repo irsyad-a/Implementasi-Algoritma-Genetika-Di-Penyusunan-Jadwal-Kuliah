@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Konsol Telemetri & Riset Algoritma Genetika - Teknik Informatika ITS</title>
+  <meta name="description" content="Konsol Telemetri dan Riset Benchmark Multi-Core Pengujian Parameter Algoritma Genetika Penjadwalan Perkuliahan Departemen Teknik Informatika ITS">
+  
+  <!-- Font Teknis: Inter & JetBrains Mono -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;700&display=swap" rel="stylesheet">
+  
+  <!-- Chart.js Engine -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.1/dist/chart.umd.min.js"></script>
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="dashboard-container">
+    <!-- Header Workbench Konsol -->
+    <header class="app-header">
+      <div class="header-title-group">
+        <h1>Konsol Telemetri & Riset Algoritma Genetika</h1>
+        <div class="header-institution">Departemen Teknik Informatika — Institut Teknologi Sepuluh Nopember</div>
+        <p class="header-subtitle">Evaluasi Komputasional Parameter Optimasi Penjadwalan Perkuliahan (Pengujian 4, 6, 12, dan 18 Worker Threads Simultan)</p>
+      </div>
+      <div class="header-actions">
+        <div class="system-status-indicator">
+          <span class="status-dot-active"></span>
+          <span>18-Worker Multi-Thread Validated</span>
+        </div>
+        <a href="http://localhost:8501" target="_blank" class="btn-nav-primary">
+          Buka Aplikasi Streamlit
+        </a>
+      </div>
+    </header>
+
+    <!-- Engineering Metric Summary Matrix -->
+    <section class="metric-matrix" aria-label="Ringkasan Metrik Kunci">
+      <div class="metric-cell">
+        <div class="metric-label">Tingkat Keberhasilan Hard = 0</div>
+        <div class="metric-value green" id="kpi-hard-zero">11 / 18 Kasus</div>
+        <div class="metric-note">100% kasus berkapasitas feasible berhasil mencapai 0 bentrok keras.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Fitness Optimal Maksimum</div>
+        <div class="metric-value cyan" id="kpi-best-fit">1.5000</div>
+        <div class="metric-note">Tercapai pada kondisi Hard = 0, Soft = 2 (Semester 1, Seed 42).</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Konvergensi Hard = 0 Tercepat</div>
+        <div class="metric-value green" id="kpi-fast-zero">Generasi 2 (18.6s)</div>
+        <div class="metric-note">Semester 1 & 2 terkonvergensi stabil di awal evolusi.</div>
+      </div>
+      <div class="metric-cell">
+        <div class="metric-label">Skala Pengujian Simultan</div>
+        <div class="metric-value cyan">18 Cores</div>
+        <div class="metric-note">Multiprocessing paralel tanpa pembatas lock antarmuka.</div>
+      </div>
+    </section>
+
+    <!-- Navigasi Tab Konsol -->
+    <nav class="tabs-nav" aria-label="Navigasi Laporan Pengujian">
+      <button class="tab-btn active" data-tab="tab-overview">Rekomendasi Parameter Produksi</button>
+      <button class="tab-btn" data-tab="tab-18core">Riset 18 Core (Hard = 0)</button>
+      <button class="tab-btn" data-tab="tab-12core">Mega Benchmark 12 Core</button>
+      <button class="tab-btn" data-tab="tab-crosscase">Komparasi Lintas Kasus (6 Core)</button>
+      <button class="tab-btn" data-tab="tab-stresstest">Stress Test Beban Berat (4 Core)</button>
+      <button class="tab-btn" data-tab="tab-genap">Optimasi Sem Genap (4 Core)</button>
+      <button class="tab-btn" data-tab="tab-theory">Landasan Matematis & Evaluasi Kapasitas</button>
+    </nav>
+
+    <!-- ========================================================================
+         TAB 1: Rekomendasi Parameter Produksi
+         ======================================================================== -->
+    <section id="tab-overview" class="tab-content active">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Tabel Matriks Rekomendasi Parameter Operasional</div>
+            <div class="panel-subtitle">Konfigurasi empiris yang terbukti menghasilkan jadwal feasible (Hard Constraint = 0)</div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="spec-matrix-table">
+            <thead>
+              <tr>
+                <th>Profil Penggunaan</th>
+                <th>Skenario Dataset Target</th>
+                <th style="text-align:center;">Ukuran Populasi</th>
+                <th style="text-align:center;">Generasi Target</th>
+                <th style="text-align:center;">Laju Mutasi</th>
+                <th style="text-align:center;">Rekomendasi Seed</th>
+                <th style="text-align:center;">Estimasi Waktu</th>
+                <th>Karakteristik Solusi</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td><strong>Verifikasi Cepat / Demonstrasi</strong></td>
+                <td>Single Semester (1 s/d 15 MK)</td>
+                <td class="mono" style="text-align:center;">50</td>
+                <td class="mono" style="text-align:center;">250</td>
+                <td class="mono" style="text-align:center;">0.08</td>
+                <td class="mono" style="text-align:center;">42</td>
+                <td class="mono" style="text-align:center;">&lt; 30 detik</td>
+                <td>Konvergensi instan untuk uji fungsi ruang dan waktu perkuliahan.</td>
+              </tr>
+              <tr>
+                <td><strong>Standar Produksi (Rekomendasi Utama)</strong></td>
+                <td>Multi-Semester / 20 - 40 MK</td>
+                <td class="mono" style="text-align:center;">100 - 150</td>
+                <td class="mono" style="text-align:center;">500</td>
+                <td class="mono" style="text-align:center;">0.07</td>
+                <td class="mono" style="text-align:center;">42, 44, 45 (3 Runs)</td>
+                <td class="mono" style="text-align:center;">1.5 - 3 menit</td>
+                <td>Rasio terbaik antara efisiensi CPU dan pencapaian Hard = 0 secara deterministik.</td>
+              </tr>
+              <tr>
+                <td><strong>Optimasi Mendalam (Beban Padat)</strong></td>
+                <td>Full Kurikulum Realistis (50+ MK)</td>
+                <td class="mono" style="text-align:center;">180 - 200</td>
+                <td class="mono" style="text-align:center;">700 - 800</td>
+                <td class="mono" style="text-align:center;">0.06</td>
+                <td class="mono" style="text-align:center;">44 (Terbaik pada Uji 18 Core)</td>
+                <td class="mono" style="text-align:center;">5 - 8 menit</td>
+                <td>Eksplorasi kromosom intensif untuk mereduksi soft constraints (jeda mahasiswa & preferensi dosen).</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <!-- Charts Grid -->
+        <div class="charts-grid">
+          <div class="chart-panel">
+            <div class="chart-header">
+              <div class="chart-title">Status Pelanggaran Hard Constraint pada 18 Core</div>
+              <div class="chart-desc">Perbandingan jumlah pelanggaran: Hijau (Hard = 0) vs Merah (Sisa Bentrok Akibat Keterbatasan Fisik)</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-18core-hard"></canvas>
+            </div>
+          </div>
+
+          <div class="chart-panel">
+            <div class="chart-header">
+              <div class="chart-title">Sensitivitas Fitness Terhadap Ukuran Populasi</div>
+              <div class="chart-desc">Ambang batas Fitness &gt; 1.0 mengindikasikan eliminasi total seluruh pelanggaran keras</div>
+            </div>
+            <div class="chart-container">
+              <canvas id="chart-fitness-pop"></canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TAB 2: Riset 18 Core
+         ======================================================================== -->
+    <section id="tab-18core" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Data Pengujian Lengkap Riset 18 Core Paralel</div>
+            <div class="panel-subtitle">Eksekusi simultan menguji keadaan struktural dataset dan dinamika parameter menuju Hard = 0</div>
+          </div>
+          <div class="filter-bar">
+            <input type="text" id="search-18core" class="search-input" placeholder="Cari nama pengujian...">
+            <select id="filter-cat-18core" class="select-input">
+              <option value="ALL">Semua Kategori</option>
+              <option value="1. Semester Tunggal">1. Semester Tunggal</option>
+              <option value="2. Multi-Semester Bebas Defisit">2. Multi-Semester Bebas Defisit</option>
+              <option value="3. Eksplorasi Param 50 MK Ganjil">3. Eksplorasi 50 MK Ganjil</option>
+              <option value="4. Struktur Kurikulum Realistis">4. Struktur Realistis Kelas Paralel</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="text-align:center;">Core</th>
+                <th>Kategori</th>
+                <th>Nama Uji</th>
+                <th style="text-align:center;">MK</th>
+                <th style="text-align:center;">Pop</th>
+                <th style="text-align:center;">Gen</th>
+                <th style="text-align:center;">Mut</th>
+                <th style="text-align:center;">Seed</th>
+                <th style="text-align:center;">Hard</th>
+                <th style="text-align:center;">Soft</th>
+                <th>Fitness</th>
+                <th style="text-align:center;">Gen Hard = 0</th>
+                <th style="text-align:right;">Waktu</th>
+                <th style="text-align:center;">Status Evaluasi</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-18core"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TAB 3: Mega Benchmark 12 Core
+         ======================================================================== -->
+    <section id="tab-12core" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Mega Benchmark 12 Core Simultan</div>
+            <div class="panel-subtitle">Komparasi parameter konfigurasi bawaan (Pop 190, Gen 1110) terhadap variasi beban kerja tinggi</div>
+          </div>
+        </div>
+
+        <div class="chart-panel" style="margin-bottom: 16px;">
+          <div class="chart-header">
+            <div class="chart-title">Sebaran Hard Violations pada 12 Tugas Paralel</div>
+            <div class="chart-desc">Task 11 (Pop 300, Gen 800, Seed 44) mencatatkan pelanggaran terendah Hard = 2 pada dataset penuh</div>
+          </div>
+          <div class="chart-container">
+            <canvas id="chart-mega-12core"></canvas>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="text-align:center;">Task</th>
+                <th>Konfigurasi Eksperimen</th>
+                <th style="text-align:center;">Pop</th>
+                <th style="text-align:center;">Gen</th>
+                <th style="text-align:center;">Mutasi</th>
+                <th style="text-align:center;">Seed</th>
+                <th style="text-align:center;">Hard</th>
+                <th style="text-align:center;">Soft</th>
+                <th>Fitness</th>
+                <th style="text-align:right;">Durasi</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-12core"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TAB 4: Komparasi Lintas Kasus (6 Core)
+         ======================================================================== -->
+    <section id="tab-crosscase" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Komparasi Lintas Kasus Kurikulum (6 Core)</div>
+            <div class="panel-subtitle">Pengujian performa algoritma pada berbagai sub-kurikulum bertingkat</div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="text-align:center;">Core</th>
+                <th>Nama Kasus</th>
+                <th>Karakteristik Kasus Kurikulum</th>
+                <th style="text-align:center;">Total MK</th>
+                <th style="text-align:center;">Hard</th>
+                <th style="text-align:center;">Soft</th>
+                <th>Fitness</th>
+                <th style="text-align:right;">Durasi</th>
+                <th style="text-align:center;">Status Kelayakan</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-crosscase"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TAB 5: Stress Test Beban Berat (4 Core)
+         ======================================================================== -->
+    <section id="tab-stresstest" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Stress Test Beban Berat Komparasi Multi-Seed (4 Core)</div>
+            <div class="panel-subtitle">Evaluasi konsistensi evolusi jangka panjang (Pop 200, Gen 1200) pada 4 seed acak berbeda</div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="text-align:center;">Core</th>
+                <th>Random Seed</th>
+                <th style="text-align:center;">Populasi</th>
+                <th style="text-align:center;">Generasi</th>
+                <th style="text-align:center;">Laju Mutasi</th>
+                <th style="text-align:center;">Hard Violations</th>
+                <th style="text-align:center;">Soft Violations</th>
+                <th>Fitness Akhir</th>
+                <th style="text-align:right;">Durasi (s)</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-stresstest"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TAB: Optimasi Semester Genap (4 Core)
+         ======================================================================== -->
+    <section id="tab-genap" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Optimasi Semester Genap Kurikulum 2023 (4 Core)</div>
+            <div class="panel-subtitle">Pencarian konfigurasi parameter optimal pada dataset riil Semester Genap (49 MK)</div>
+          </div>
+        </div>
+
+        <div class="table-responsive">
+          <table class="data-table">
+            <thead>
+              <tr>
+                <th style="text-align:center;">Core</th>
+                <th>Label Konfigurasi</th>
+                <th>Tipe Strategi</th>
+                <th style="text-align:center;">Pop</th>
+                <th style="text-align:center;">Gen</th>
+                <th style="text-align:center;">Mut</th>
+                <th style="text-align:center;">Seed</th>
+                <th style="text-align:center;">Hard</th>
+                <th style="text-align:center;">Soft</th>
+                <th>Fitness</th>
+                <th style="text-align:right;">Durasi</th>
+              </tr>
+            </thead>
+            <tbody id="tbody-genap"></tbody>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- ========================================================================
+         TAB 6: Landasan Matematis & Evaluasi Kapasitas
+         ======================================================================== -->
+    <section id="tab-theory" class="tab-content">
+      <div class="panel">
+        <div class="panel-header">
+          <div>
+            <div class="panel-title">Landasan Matematis & Analisis Hambatan Kapasitas Fisik</div>
+            <div class="panel-subtitle">Penjelasan formal mengenai batas komputasi dan teorema sarang merpati pada jadwal perkuliahan</div>
+          </div>
+        </div>
+
+        <div class="theory-block">
+          <h3>1. Fungsi Objektif Fitness & Ambang Batas Konvergensi</h3>
+          <p>Evaluasi kualitas setiap individu kromosom dihitung melalui perumusan fungsi fitness berikut:</p>
+          <div class="code-display">
+            Fitness = 2.0 (apabila m = 0 dan c = 0)
+            Fitness = 1.0 / (m + (c / (c + 1.0))) (apabila m > 0 atau c > 0)
+          </div>
+          <p>Di mana variabel <strong>m</strong> merepresentasikan total pelanggaran Hard Constraints (dosen bentrok, ruang bentrok, atau rombel bentrok), dan <strong>c</strong> merepresentasikan pelanggaran Soft Constraints.</p>
+          <ul>
+            <li>Ketika <strong>m = 0</strong>: Nilai penyebut bernilai <code>c / (c + 1.0) &lt; 1.0</code>, sehingga nilai <strong>Fitness &gt; 1.0</strong> (misal 1.013 hingga 1.500).</li>
+            <li>Ketika <strong>m &ge; 1</strong>: Nilai penyebut bernilai <code>&ge; 1.0</code>, sehingga nilai <strong>Fitness selalu &le; 1.0</strong>.</li>
+            <li><strong>Kesimpulan Matematis:</strong> Nilai Fitness &gt; 1.0 merupakan bukti deterministik bahwa jadwal telah mencapai kondisi <strong>Hard Violations = 0</strong>.</li>
+          </ul>
+        </div>
+
+        <div class="theory-block">
+          <h3>2. Prinsip Sarang Merpati (Dirichlet's Pigeonhole Principle)</h3>
+          <p>
+            Dalam satu minggu operasional perkuliahan, tersedia tepat <strong>25 slot pertemuan waktu</strong> (5 hari kerja &times; 5 sesi waktu per hari).
+            Apabila satu rombongan belajar mahasiswa (misal: Rombel Semester 6 Kelas A) dibebani 37 mata kuliah tanpa pemecahan kelas paralel:
+          </p>
+          <div class="code-display">
+            Batas Bentrok Minimum Tak Terhindarkan = Total MK - Slot Waktu Tersedia = 37 - 25 = 12 Bentrok
+          </div>
+          <p>
+            Konsekuensinya, berapapun jumlah populasi atau iterasi generasi yang diberikan kepada Algoritma Genetika,
+            secara matematis <strong>mustahil</strong> mendapatkan Hard = 0 pada data tersebut tanpa membagi rombel mahasiswa ke kelas paralel atau menambah alokasi hari/sesi.
+          </p>
+        </div>
+
+        <!-- Kalkulator Interaktif Evaluasi Rombel -->
+        <div class="theory-block" style="border-color: var(--border-highlight);">
+          <h3>Kalkulator Evaluasi Kelayakan Kapasitas Rombel</h3>
+          <p style="margin-bottom: 12px;">Periksa kelayakan matematis rasio mata kuliah terhadap batas slot waktu operasional:</p>
+          <div style="display: flex; gap: 12px; align-items: center; flex-wrap: wrap;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Jumlah MK per Rombel:</label>
+            <input type="number" id="calc-courses" class="search-input" value="20" style="width: 90px;">
+            <label style="font-size: 12px; color: var(--text-secondary);">Slot Waktu Tersedia:</label>
+            <input type="number" id="calc-slots" class="search-input" value="25" style="width: 90px;">
+            <button id="btn-calc-pigeon" class="btn-nav-primary" style="cursor: pointer;">Hitung Kelayakan</button>
+          </div>
+          <div id="calc-result"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Footer Telemetri -->
+    <footer class="app-footer">
+      Departemen Teknik Informatika FTEIC — Institut Teknologi Sepuluh Nopember &bull; Laboratorium Komputasi Cerdas &bull; Kelompok KKA-05
+    </footer>
+  </div>
+
+  <!-- Data & Eksekusi JS -->
+  <script src="data.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>

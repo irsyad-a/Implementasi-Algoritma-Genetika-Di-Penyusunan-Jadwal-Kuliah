@@ -1,0 +1,149 @@
+{
+  "metadata": {
+    "judul": "Hasil Benchmark Lintas Kasus (Cross-Case Evaluation)",
+    "total_kasus": 6,
+    "durasi_total_detik": 1752.6,
+    "durasi_total_menit": 29.21,
+    "tanggal": "2026-10-26 06:32:07"
+  },
+  "detail_kasus": [
+    {
+      "core_idx": 1,
+      "case_name": "Semester_1",
+      "deskripsi": "Paket Semester 1 (5 MK Sains SKPB)",
+      "total_mk": 5,
+      "populasi": 80,
+      "generasi_target": 200,
+      "generasi_aktual": 200,
+      "konvergensi_dini": false,
+      "fitness": 1.5,
+      "hard_violations": 0,
+      "soft_violations": 2,
+      "durasi_detik": 56.83,
+      "durasi_menit": 0.95,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 0,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 2
+      }
+    },
+    {
+      "core_idx": 2,
+      "case_name": "Semester_3",
+      "deskripsi": "Paket Semester 3 (7 MK Departemen)",
+      "total_mk": 7,
+      "populasi": 80,
+      "generasi_target": 200,
+      "generasi_aktual": 200,
+      "konvergensi_dini": false,
+      "fitness": 1.166667,
+      "hard_violations": 0,
+      "soft_violations": 6,
+      "durasi_detik": 59.62,
+      "durasi_menit": 0.99,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 0,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 6
+      }
+    },
+    {
+      "core_idx": 3,
+      "case_name": "Semester_5_Murni",
+      "deskripsi": "Isolasi Semester 5 (20 MK Rombel Padat)",
+      "total_mk": 20,
+      "populasi": 150,
+      "generasi_target": 500,
+      "generasi_aktual": 500,
+      "konvergensi_dini": false,
+      "fitness": 1.03125,
+      "hard_violations": 0,
+      "soft_violations": 32,
+      "durasi_detik": 380.21,
+      "durasi_menit": 6.34,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 0,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 32
+      }
+    },
+    {
+      "core_idx": 4,
+      "case_name": "Semester_7_Murni",
+      "deskripsi": "Isolasi Semester 7 (18 MK Akhir)",
+      "total_mk": 18,
+      "populasi": 150,
+      "generasi_target": 500,
+      "generasi_aktual": 500,
+      "konvergensi_dini": false,
+      "fitness": 1.041667,
+      "hard_violations": 0,
+      "soft_violations": 24,
+      "durasi_detik": 353.11,
+      "durasi_menit": 5.89,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 0,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 24
+      }
+    },
+    {
+      "core_idx": 5,
+      "case_name": "Semester_Genap",
+      "deskripsi": "Preset Semester Genap (2, 4, 6, 8)",
+      "total_mk": 49,
+      "populasi": 120,
+      "generasi_target": 400,
+      "generasi_aktual": 400,
+      "konvergensi_dini": false,
+      "fitness": 0.066726,
+      "hard_violations": 14,
+      "soft_violations": 74,
+      "durasi_detik": 392.82,
+      "durasi_menit": 6.55,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 14,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 74
+      }
+    },
+    {
+      "core_idx": 6,
+      "case_name": "Semua_Semester",
+      "deskripsi": "Full Scale Kurikulum (100+ MK)",
+      "total_mk": 99,
+      "populasi": 200,
+      "generasi_target": 500,
+      "generasi_aktual": 500,
+      "konvergensi_dini": false,
+      "fitness": 0.033341,
+      "hard_violations": 29,
+      "soft_violations": 150,
+      "durasi_detik": 1751.35,
+      "durasi_menit": 29.19,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 4,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 25,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 150
+      }
+    }
+  ]
+}

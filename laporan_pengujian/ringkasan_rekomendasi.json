@@ -1,0 +1,71 @@
+{
+  "judul": "Rekomendasi Parameter Optimal Algoritma Genetika Penjadwalan Kuliah",
+  "kasus": "Preset Data Semester Ganjil (1, 3, 5, 7)",
+  "dataset_summary": {
+    "total_mata_kuliah": 50,
+    "total_ruang": 28,
+    "total_slot_waktu": 25,
+    "distribusi_semester": {
+      "semester_1": 5,
+      "semester_3": 7,
+      "semester_5": 20,
+      "semester_7": 18
+    }
+  },
+  "rekomendasi_profil": {
+    "profil_cepat_interaktif": {
+      "deskripsi": "Cocok untuk demo langsung, pengujian cepat, dan preview instan di Streamlit UI.",
+      "parameter": {
+        "populasi_size": 50,
+        "generasi": 150,
+        "mutation_rate": 0.08,
+        "random_seed": 42,
+        "jumlah_run": 1
+      },
+      "ekspektasi_performa": {
+        "estimasi_waktu": "~45 - 60 detik",
+        "fitness_score": "~0.16 - 0.20",
+        "hard_violations": "4 - 5",
+        "soft_violations": "~75 - 82"
+      }
+    },
+    "profil_standar_seimbang": {
+      "deskripsi": "Rekomendasi utama (Sweet Spot) untuk penggunaan operasional harian. Keseimbangan terbaik antara kualitas solusi dan waktu tunggu.",
+      "parameter": {
+        "populasi_size": 80,
+        "generasi": 250,
+        "mutation_rate": 0.08,
+        "random_seed": 44,
+        "jumlah_run": 3
+      },
+      "ekspektasi_performa": {
+        "estimasi_waktu": "~2.5 - 3 menit",
+        "fitness_score": "~0.2005",
+        "hard_violations": "4",
+        "soft_violations": "~72 - 77"
+      }
+    },
+    "profil_maksimal_kualitas": {
+      "deskripsi": "Cocok untuk penyusunan jadwal final semester dengan eksplorasi ruang solusi terdalam.",
+      "parameter": {
+        "populasi_size": 100,
+        "generasi": 400,
+        "mutation_rate": 0.05,
+        "random_seed": 45,
+        "jumlah_run": 5
+      },
+      "ekspektasi_performa": {
+        "estimasi_waktu": "~4 - 5 menit",
+        "fitness_score": "~0.2005",
+        "hard_violations": "4 (Terkecil secara stokastik)",
+        "soft_violations": "~70 - 72"
+      }
+    }
+  },
+  "rekomendasi_arsitektur_ga": [
+    "Bottleneck utama bukan pada kapasitas RAM melainkan CPU single-core pada tahap evaluasi fitness O(N^2).",
+    "Konflik yang tersisa murni berasal dari Bentrok Rombel Mahasiswa karena Semester 5 memiliki 20 MK dalam 25 slot mingguan.",
+    "Laju mutasi terbaik berada di 5% - 8% (0.05 - 0.08). Laju mutasi di atas 20% bersifat destruktif terhadap skema kromosom.",
+    "Multi-seed run optimal adalah 3 - 5 run. Menjalankan lebih dari 5 run memberikan diminishing returns."
+  ]
+}

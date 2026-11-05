@@ -1,0 +1,106 @@
+{
+  "metadata": {
+    "judul": "Hasil Pengujian Optimasi Kasus Semester Genap (2, 4, 6, 8)",
+    "total_mk": 49,
+    "total_ruang": 28,
+    "total_slot": 25,
+    "durasi_total_detik": 1077.39,
+    "durasi_total_menit": 17.96,
+    "tanggal": "2026-10-26 06:31:06"
+  },
+  "detail_pengujian": [
+    {
+      "core_idx": 1,
+      "label": "Genap_Optimal_Standar",
+      "tipe": "Single-Run",
+      "populasi": 120,
+      "generasi": 400,
+      "mutasi": 0.08,
+      "seed": 42,
+      "fitness": 0.071493,
+      "hard_violations": 13,
+      "soft_violations": 78,
+      "durasi_detik": 336.34,
+      "durasi_menit": 5.61,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 13,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 78
+      }
+    },
+    {
+      "core_idx": 2,
+      "label": "Genap_Eksplorasi_Tinggi",
+      "tipe": "Single-Run",
+      "populasi": 150,
+      "generasi": 600,
+      "mutasi": 0.08,
+      "seed": 44,
+      "fitness": 0.077002,
+      "hard_violations": 12,
+      "soft_violations": 74,
+      "durasi_detik": 921.31,
+      "durasi_menit": 15.36,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 12,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 74
+      }
+    },
+    {
+      "core_idx": 3,
+      "label": "Genap_Presisi_Mutasi_5%",
+      "tipe": "Single-Run",
+      "populasi": 150,
+      "generasi": 600,
+      "mutasi": 0.05,
+      "seed": 2024,
+      "fitness": 0.066731,
+      "hard_violations": 14,
+      "soft_violations": 68,
+      "durasi_detik": 944.41,
+      "durasi_menit": 15.74,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 14,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 68
+      }
+    },
+    {
+      "core_idx": 4,
+      "label": "Genap_MultiSeed_Ensemble",
+      "tipe": "Multi-Seed Ensemble",
+      "populasi": 100,
+      "generasi": 350,
+      "mutasi": 0.08,
+      "seed": 44,
+      "seeds_tested": [
+        42,
+        44,
+        45
+      ],
+      "fitness": 0.066731,
+      "hard_violations": 14,
+      "soft_violations": 68,
+      "durasi_detik": 1076.17,
+      "durasi_menit": 17.94,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 14,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 68
+      }
+    }
+  ]
+}

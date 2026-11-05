@@ -1,0 +1,852 @@
+{
+  "metadata": {
+    "judul": "Hasil Stress-Test Skala Penuh Algoritma Genetika",
+    "kasus": "Preset Data Semester Ganjil (1, 3, 5, 7)",
+    "parameter": {
+      "populasi": 200,
+      "generasi": 1200,
+      "mutasi": 0.08,
+      "runs": 4
+    },
+    "durasi_total_detik": 1989.66,
+    "durasi_total_menit": 33.16,
+    "waktu_eksekusi": "2026-10-26 06:29:30"
+  },
+  "pemenang": {
+    "run": 2,
+    "seed": 44,
+    "populasi_size": 200,
+    "generasi_target": 1200,
+    "generasi_selesai": 1200,
+    "mutation_rate": 0.08,
+    "fitness": 0.250836,
+    "hard_violations": 3,
+    "soft_violations": 74,
+    "durasi_detik": 1988.21,
+    "durasi_menit": 33.14,
+    "counts": {
+      "Kapasitas Terlampaui": 0,
+      "Bentrok Ruang & Waktu": 0,
+      "Bentrok Dosen Mengajar": 0,
+      "Bentrok Rombel Mahasiswa": 3,
+      "Alokasi Gedung Tidak Sesuai": 0,
+      "Preferensi Dosen": 74
+    },
+    "history_sampling": [
+      {
+        "gen": 1,
+        "fit": 0.100137,
+        "hard": 9,
+        "soft": 72
+      },
+      {
+        "gen": 51,
+        "fit": 0.143123,
+        "hard": 6,
+        "soft": 76
+      },
+      {
+        "gen": 101,
+        "fit": 0.14313,
+        "hard": 6,
+        "soft": 74
+      },
+      {
+        "gen": 151,
+        "fit": 0.14313,
+        "hard": 6,
+        "soft": 74
+      },
+      {
+        "gen": 201,
+        "fit": 0.14313,
+        "hard": 6,
+        "soft": 74
+      },
+      {
+        "gen": 251,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 301,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 351,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 401,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 451,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 501,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 551,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 601,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 651,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 701,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 751,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 801,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 851,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 901,
+        "fit": 0.250746,
+        "hard": 3,
+        "soft": 83
+      },
+      {
+        "gen": 951,
+        "fit": 0.250836,
+        "hard": 3,
+        "soft": 74
+      },
+      {
+        "gen": 1001,
+        "fit": 0.250836,
+        "hard": 3,
+        "soft": 74
+      },
+      {
+        "gen": 1051,
+        "fit": 0.250836,
+        "hard": 3,
+        "soft": 74
+      },
+      {
+        "gen": 1101,
+        "fit": 0.250836,
+        "hard": 3,
+        "soft": 74
+      },
+      {
+        "gen": 1151,
+        "fit": 0.250836,
+        "hard": 3,
+        "soft": 74
+      }
+    ]
+  },
+  "detail_runs": [
+    {
+      "run": 2,
+      "seed": 44,
+      "populasi_size": 200,
+      "generasi_target": 1200,
+      "generasi_selesai": 1200,
+      "mutation_rate": 0.08,
+      "fitness": 0.250836,
+      "hard_violations": 3,
+      "soft_violations": 74,
+      "durasi_detik": 1988.21,
+      "durasi_menit": 33.14,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 3,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 74
+      },
+      "history_sampling": [
+        {
+          "gen": 1,
+          "fit": 0.100137,
+          "hard": 9,
+          "soft": 72
+        },
+        {
+          "gen": 51,
+          "fit": 0.143123,
+          "hard": 6,
+          "soft": 76
+        },
+        {
+          "gen": 101,
+          "fit": 0.14313,
+          "hard": 6,
+          "soft": 74
+        },
+        {
+          "gen": 151,
+          "fit": 0.14313,
+          "hard": 6,
+          "soft": 74
+        },
+        {
+          "gen": 201,
+          "fit": 0.14313,
+          "hard": 6,
+          "soft": 74
+        },
+        {
+          "gen": 251,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 301,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 351,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 401,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 451,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 501,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 551,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 601,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 651,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 701,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 751,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 801,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 851,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 901,
+          "fit": 0.250746,
+          "hard": 3,
+          "soft": 83
+        },
+        {
+          "gen": 951,
+          "fit": 0.250836,
+          "hard": 3,
+          "soft": 74
+        },
+        {
+          "gen": 1001,
+          "fit": 0.250836,
+          "hard": 3,
+          "soft": 74
+        },
+        {
+          "gen": 1051,
+          "fit": 0.250836,
+          "hard": 3,
+          "soft": 74
+        },
+        {
+          "gen": 1101,
+          "fit": 0.250836,
+          "hard": 3,
+          "soft": 74
+        },
+        {
+          "gen": 1151,
+          "fit": 0.250836,
+          "hard": 3,
+          "soft": 74
+        }
+      ]
+    },
+    {
+      "run": 4,
+      "seed": 2024,
+      "populasi_size": 200,
+      "generasi_target": 1200,
+      "generasi_selesai": 1200,
+      "mutation_rate": 0.08,
+      "fitness": 0.250774,
+      "hard_violations": 3,
+      "soft_violations": 80,
+      "durasi_detik": 1988.71,
+      "durasi_menit": 33.15,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 1,
+        "Bentrok Rombel Mahasiswa": 2,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 80
+      },
+      "history_sampling": [
+        {
+          "gen": 1,
+          "fit": 0.100139,
+          "hard": 9,
+          "soft": 71
+        },
+        {
+          "gen": 51,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 101,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 151,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 201,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 251,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 301,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 351,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 401,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 451,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 501,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 551,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 601,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 651,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 701,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 751,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 801,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 851,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 901,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 951,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 1001,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 1051,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 1101,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        },
+        {
+          "gen": 1151,
+          "fit": 0.250774,
+          "hard": 3,
+          "soft": 80
+        }
+      ]
+    },
+    {
+      "run": 3,
+      "seed": 45,
+      "populasi_size": 200,
+      "generasi_target": 1200,
+      "generasi_selesai": 1200,
+      "mutation_rate": 0.08,
+      "fitness": 0.200549,
+      "hard_violations": 4,
+      "soft_violations": 72,
+      "durasi_detik": 1970.72,
+      "durasi_menit": 32.85,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 4,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 72
+      },
+      "history_sampling": [
+        {
+          "gen": 1,
+          "fit": 0.100127,
+          "hard": 9,
+          "soft": 78
+        },
+        {
+          "gen": 51,
+          "fit": 0.143123,
+          "hard": 6,
+          "soft": 76
+        },
+        {
+          "gen": 101,
+          "fit": 0.167033,
+          "hard": 5,
+          "soft": 75
+        },
+        {
+          "gen": 151,
+          "fit": 0.167033,
+          "hard": 5,
+          "soft": 75
+        },
+        {
+          "gen": 201,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 251,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 301,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 351,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 401,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 451,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 501,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 551,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 601,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 651,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 701,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 751,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 801,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 851,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 901,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 951,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 1001,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 1051,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 1101,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        },
+        {
+          "gen": 1151,
+          "fit": 0.200549,
+          "hard": 4,
+          "soft": 72
+        }
+      ]
+    },
+    {
+      "run": 1,
+      "seed": 42,
+      "populasi_size": 200,
+      "generasi_target": 1200,
+      "generasi_selesai": 1200,
+      "mutation_rate": 0.08,
+      "fitness": 0.200542,
+      "hard_violations": 4,
+      "soft_violations": 73,
+      "durasi_detik": 1871.68,
+      "durasi_menit": 31.19,
+      "counts": {
+        "Kapasitas Terlampaui": 0,
+        "Bentrok Ruang & Waktu": 0,
+        "Bentrok Dosen Mengajar": 0,
+        "Bentrok Rombel Mahasiswa": 4,
+        "Alokasi Gedung Tidak Sesuai": 0,
+        "Preferensi Dosen": 73
+      },
+      "history_sampling": [
+        {
+          "gen": 1,
+          "fit": 0.125203,
+          "hard": 7,
+          "soft": 76
+        },
+        {
+          "gen": 51,
+          "fit": 0.143116,
+          "hard": 6,
+          "soft": 78
+        },
+        {
+          "gen": 101,
+          "fit": 0.143116,
+          "hard": 6,
+          "soft": 78
+        },
+        {
+          "gen": 151,
+          "fit": 0.143137,
+          "hard": 6,
+          "soft": 72
+        },
+        {
+          "gen": 201,
+          "fit": 0.143141,
+          "hard": 6,
+          "soft": 71
+        },
+        {
+          "gen": 251,
+          "fit": 0.166998,
+          "hard": 5,
+          "soft": 83
+        },
+        {
+          "gen": 301,
+          "fit": 0.166998,
+          "hard": 5,
+          "soft": 83
+        },
+        {
+          "gen": 351,
+          "fit": 0.200489,
+          "hard": 4,
+          "soft": 81
+        },
+        {
+          "gen": 401,
+          "fit": 0.200489,
+          "hard": 4,
+          "soft": 81
+        },
+        {
+          "gen": 451,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 501,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 551,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 601,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 651,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 701,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 751,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 801,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 851,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 901,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 951,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 1001,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 1051,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 1101,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        },
+        {
+          "gen": 1151,
+          "fit": 0.200542,
+          "hard": 4,
+          "soft": 73
+        }
+      ]
+    }
+  ]
+}
